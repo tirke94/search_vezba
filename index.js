@@ -6,7 +6,7 @@ let posts = [
         comments: ['com1', 'com2']
     },
     {
-        text: 'neki textv 2',
+        text: 'neki text 2',
         postImg: 'https://purepng.com/public/uploads/large/purepng.com-mariomariofictional-charactervideo-gamefranchisenintendodesigner-1701528634653vywuz.png',
         likes: 0,
         comments: []
@@ -75,3 +75,8 @@ const renderComment = (arr, app) => {
 }
 const app = document.querySelector('.app')
 renderComment(posts, app)
+
+const inputSearch = document.querySelector('.inputSearch')
+inputSearch.addEventListener('input', () => {
+    renderComment(posts.filter(element => element.text.includes(inputSearch.value)),app) 
+})
